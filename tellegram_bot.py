@@ -3,9 +3,8 @@ import telebot
 import os
 
 owm = pyowm.OWM('1a420a768f9e1ff26e71c86845a06fcc',language = "RU")
-#bot = telebot.TeleBot("1042248088:AAFCzpyLI0Ps-m65NkrXR5ErtxDiV6khPg4")
 token = os.eviron.get('BOT_TOKEN')
-
+bot.run(str(token))
 @bot.message_handler(content_types=['text'])
 def send_echo(message):
 	observation = owm.weather_at_place( message.text )
